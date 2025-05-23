@@ -28,14 +28,14 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#faf0e6', // Cor de fundo da tela
+    backgroundColor: '#f0f8ff', // Cor de fundo da tela
   },
   title: {
     fontSize: 24,
     marginBottom: 20,
   },
   buttonContainer: {
-    backgroundColor: '#ffebcd', // Cor de fundo do container do botão
+    backgroundColor: '#add8e6', // Cor de fundo do container do botão
     margin: 10,
     width: windowWidth * 0.5, // 50% da largura da tela
     borderRadius: 5,
