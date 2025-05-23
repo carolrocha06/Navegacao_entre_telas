@@ -12,6 +12,7 @@ const LoginScreen = ({ navigation }) => {
         setError(""); // para uma validação mais completa
 
         if (!user || !senha) {
+        if (!user || !senha) {
             setError("Ambos os campos são necessários!");
         }
 
@@ -32,12 +33,14 @@ const LoginScreen = ({ navigation }) => {
                 keyboardType="default" // padrao do sistema
                 value={user}
                 onChangeText = {setUser}
+                onChangeText = {setUser}
             />
             <TextInput
                 style={styles.input}
                 placeholder="Senha"
                 keyboardType="default" // teclado padrao
                 value={senha}
+                onChangeText = {setSenha}
                 onChangeText = {setSenha}
             />
             <Button title="Entrar" onPress={validar} color="black" />
