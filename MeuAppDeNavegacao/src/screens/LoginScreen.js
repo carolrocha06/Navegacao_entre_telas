@@ -14,17 +14,9 @@ const LoginScreen = () => {
             setError("Ambos os campos são necessários!");
         }
 
-        else if (isNaN(senha))// isNan - verificar se o valor digitado é um número valido
-        {
-            setError("Por favor, insira uma senha com números e letras!"); // para informar o erro
-            setSenha(null); // limpa o estado em caso de erro
-            return;
-        }
-        else {
-            if(user == "usuario123" && senha == "senha123")
-            {
-                navigation.navigated(!"Home");
-            }
+        else if (user == "usuario123" && senha == "senha123") {
+            navigation.navigated("Home");
+            
         }
     };
 
@@ -35,14 +27,14 @@ const LoginScreen = () => {
                 placeholder="Usuário"
                 keyboardType="default" // padrao do sistema
                 value={user}
-                onChanceText = {setUser}
+                onChangeText = {setUser}
             />
             <TextInput
                 style={styles.input}
                 placeholder="Senha"
                 keyboardType="default" // teclado padrao
                 value={senha}
-                onChanceText = {setSenha}
+                onChangeText = {setSenha}
             />
             <Button title="Entrar" onPress={validar} color="black" />
             {/* mostra a mensagem de erro se a validacao falhar */}
