@@ -1,8 +1,7 @@
-
 import { View, TextInput, Button, StyleSheet, Text } from "react-native";
 import { useState } from "react";
 
-const LoginScreen = () => {
+const LoginScreen = ({ navigation }) => {
     const [user, setUser] = useState(""); // estados são como caixinhas onde guardamos informações que podemos mudar
     const [senha, setSenha] = useState(""); // sempre que algo é alterado, essas caixinhas mudam e a tela reflete as mudancas
     const [error, setError] = useState(null); // novo estado para mensagens de erro
@@ -10,13 +9,12 @@ const LoginScreen = () => {
     const validar = () => {
         setError(""); // para uma validação mais completa
 
-        if (!user && !senha) {
+        if (!user || !senha) {
             setError("Ambos os campos são necessários!");
         }
 
         else if (user == "usuario123" && senha == "senha123") {
-            navigation.navigated("Home");
-            
+            navigation.navigate("Home");
         }
     };
 
@@ -49,7 +47,7 @@ const styles = StyleSheet.create({
         flex: 1, // melhor adaptacao a diferentes tamanhos de tela
         backgroundColor: '#B0E0E6',
         padding: 16,
-        maxHeight: 300,
+        maxHeight: 250,
         borderRadius: 20,
     },
 
