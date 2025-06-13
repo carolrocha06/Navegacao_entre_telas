@@ -14,12 +14,17 @@ const LoginScreen = ({ navigation }) => {
         if (!user || !senha) {
             setError("Ambos os campos são necessários!");
         }
-
         else if (user == "usuario123" && senha == "senha123") {
             navigation.navigate("Home");
         }
-        else{
-            alert("Usuario ou Senha incorreto");
+        else if (user != "usuario123" && senha != "senha123") {
+            alert("Usuario e senha incorretos");
+        }
+        else if (user != "usuario123") {
+            alert("Usuário incorreto!");
+        }
+        else if (senha != "senha123") {
+            alert("Senha incorreta!");
         }
     };
 
@@ -39,6 +44,7 @@ const LoginScreen = ({ navigation }) => {
                 keyboardType="default" // teclado padrao
                 value={senha}
                 onChangeText = {setSenha}
+                secureTextEntry={true} 
             />
             <Button title="Entrar" onPress={validar} color="black" />
             {/* mostra a mensagem de erro se a validacao falhar */}
